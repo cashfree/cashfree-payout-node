@@ -1,7 +1,9 @@
 /*
-Below is an integration flow on how to use Cashfree's payouts. 
+Below is an integration flow on how to use Cashfree's payouts.
+Please go through the payout docs here: https://docs.cashfree.com/docs/payout/guide/
+
 The following script contains the following functionalities :
-    1.getToken() -> to get auth token to be used in all following tokens.
+    1.getToken() -> to get auth token to be used in all following calls.
     2.getBeneficiary() -> to get beneficiary details/check if a beneficiary exists
     3.createBeneficiaryEntity() -> to create beneficiaries
     4.requestTransfer() -> to create a payout transfer
@@ -10,12 +12,7 @@ The following script contains the following functionalities :
 
 All the data used by the script can be found in the config.json file. This includes the clientId, clientSecret, Beneficiary object, Transaction Object.
 You can change keep changing the values in the config file and running the script.
-The flow of the following script is:
-1. fetching the auth token
-2. checking if beneficary exists.
-3. If beneficiary does not exist, create a new beneficiary
-4. requesting a transfer
-5. checking the status of a transfer.
+Please enter your clientId and clientSecret, along with the appropriate enviornment, beneficiary details and request details
 */
 
 /**
@@ -53,6 +50,7 @@ function createHeader(token){
 }
 
 //function to get the authentication token
+//token is alive for 5 mins
 async function getToken(){
     try{
         const r = await postAsync(createOptions('auth', headers));
@@ -127,6 +125,14 @@ async function getTransferStatus(token){
     }
 }
 
+/*
+The flow executed below is:
+1. fetching the auth token
+2. checking if beneficary exists.
+3. If beneficiary does not exist, create a new beneficiary
+4. requesting a transfer
+5. checking the status of a transfer.
+*/
 (
     async () => {
         try{

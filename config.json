@@ -1,6 +1,6 @@
 {
-    "clientId": "CF6130FKDN0O61WFQMYUM",
-    "clientSecret": "d1141e574b7e3b1caf032ee7af3e4dbea3a61681",
+    "clientId": "enter_your_clientId",
+    "clientSecret": "enter_your_clientSecret",
     "env": "test",
     "baseUrl": {
         "test": "https://payout-gamma.cashfree.com",
@@ -13,7 +13,6 @@
         "requestTransfer": "/payout/v1/requestTransfer",
         "getTransferStatus": "/payout/v1/getTransferStatus?transferId="
     },
-    "createBeneficiary": 1,
     "beneDetails":{"beneId": "JOHN18019", 
         "name": "john doe",
         "email": "johndoe@cashfree.com", 
