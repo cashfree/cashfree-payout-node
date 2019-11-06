@@ -1,0 +1,14 @@
+{
+  "name": "cf_payout_node_integration_flow",
+  "version": "1.0.0",
+  "description": "cashfree integration flow for node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
