@@ -1,0 +1,27 @@
+{
+    "clientId": "enter_your_clientId",
+    "clientSecret": "enter_your_clientSecret",
+    "env": "test",
+    "baseUrl": {
+        "test": "https://payout-gamma.cashfree.com",
+        "prod": "https://payout-api.cashfree.com"
+    },
+    "url":{
+        "auth": "/payout/v1/authorize",
+        "getBene": "/payout/v1/getBeneficiary/",
+        "addBene": "/payout/v1/addBeneficiary",
+        "requestTransfer": "/payout/v1/requestTransfer",
+        "getTransferStatus": "/payout/v1/getTransferStatus?transferId="
+    },
+    "beneDetails":{"beneId": "JOHN18019", 
+        "name": "john doe",
+        "email": "johndoe@cashfree.com", 
+        "phone": "9876543210", 
+        "bankAccount": "000890289871772", 
+        "ifsc": "SCBL0036078", 
+        "address1" : "ABC Street", 
+        "city": "Bangalore", 
+        "state":"Karnataka", 
+        "pincode": "560001"},
+    "transferDetails": {"beneId" : "JOHN18019", "amount": "100.00", "transferId": "DEC2030"}
+}
