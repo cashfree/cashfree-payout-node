@@ -1,0 +1,14 @@
+{
+  "name": "cashfree_lib_sample_node",
+  "version": "1.0.0",
+  "description": "sample script aiming to demonstrate how to use cashfree's sdk",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vrishab@cashfree.com",
+  "license": "ISC",
+  "dependencies": {
+    "cashfree-sdk": "git+https://github.com/cashfree/cashfree-sdk-nodejs.git"
+  }
+}
