@@ -1,27 +1,14 @@
 {
-<<<<<<< HEAD
   "name": "cashfree_lib_sample_node",
   "version": "1.0.0",
   "description": "sample script aiming to demonstrate how to use cashfree's sdk",
-=======
-  "name": "cf_payout_node_integration_flow",
-  "version": "1.0.0",
-  "description": "cashfree integration flow for node",
->>>>>>> master
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-<<<<<<< HEAD
   "author": "vrishab@cashfree.com",
   "license": "ISC",
   "dependencies": {
     "cashfree-sdk": "git+https://github.com/cashfree/cashfree-sdk-nodejs.git"
-=======
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "request": "^2.88.0"
->>>>>>> master
   }
 }

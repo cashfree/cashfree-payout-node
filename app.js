@@ -31,8 +31,6 @@ const {Beneficiary, Transfers} = Payouts;
 //main execution function
 (
 async () => {
-    //below functional call does not work
-    cfSdk.Init(config);
     Payouts.Init(config.Payouts);
     //Beneficiary Addition
     try{
