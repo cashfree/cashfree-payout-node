@@ -1,6 +1,6 @@
 # Cashfree Payout Integration Kit for Node
 
-Below is an integration flow on how to use Cashfree's payouts.
+Below is an integration flow on how to use Cashfree's payouts sdk.
 Please go through the payout docs [here](https://docs.cashfree.com/docs/payout/guide/)
 <br/>
 This kit is linked to the standard transfer flow. Go [here](https://dev.cashfree.com/payouts/integrations/standard-transfer) to get a better understanding.
@@ -10,26 +10,25 @@ This kit is linked to the standard transfer flow. Go [here](https://dev.cashfree
 
 The following kit contains the following functionalities:
     <ol>
-    <li> [getToken](https://dev.cashfree.com/api-reference/payouts-api#authorise): to get auth token to be used in all          following calls.
-    <li> [getBeneficiary](https://dev.cashfree.com/api-reference/payouts-api#get-beneficiary-details): to get beneficiary details/check if a beneficiary exists.
-    <li> [createBeneficiaryEntity](https://dev.cashfree.com/api-reference/payouts-api#create-beneficiary): to create beneficiaries.
-    <li> [requestTransfer](https://dev.cashfree.com/api-reference/payouts-api#standard-transfer): to create a payout transfer.
-    <li> [getTransferStatus](https://dev.cashfree.com/api-reference/payouts-api#get-transfer-status): to get payout transfer status.
+    <li> init: initialise the payout sdk.
+    <li> Beneficiary.Add: to get beneficiary details/check if a beneficiary exists.
+    <li> Beneficiary.GetDetails: to create beneficiaries.
+    <li> Transfers.RequestTransfer: to create a payout transfer.
+    <li> Transfers.GetTransferStatus: to get payout transfer status.
     </ol>
 
 ## Build Steps
 
 follow the following build steps to compile the Integration kit:
   1. Download the code and cd into the directory containing the code.
-  2. install the following dependencies: request 
-  run the following from the command line to install all the dependencies.
+  2. run the following from the command line to install all the dependencies.
   ```
   npm install
   ```
 ## Set Up
 
 ### Pre Requisites:
-The following kit uses information stored in a config file. Before running the code for the first time open the config.json file
+The following kit uses information stored in the app.js. Before running the code for the first time open the config.json file
 and add the relevant details:
   1. ClientId: This is a unique Identifier that identifies the merchant. For more information please go [here](https://dev.cashfree.com/payouts/integrations/pre-requisites#credentials).
   2. ClientSecret: Corresponding secret key for the given ClientId that helps Cashfree indentify the merchant. For more information please go [here](https://dev.cashfree.com/payouts/integrations/pre-requisites#credentials).
@@ -43,7 +42,7 @@ Your IP has to be whitelisted to hit Cashfree's server. For more information ple
 The following kit needs beneficiary details in order to check if the beneficary exists and if it does not exist, 
 create a beneficiary for the payout transfer. For more information on Beneficiaries please go [here](https://dev.cashfree.com/payouts/integrations/standard-transfer#beneficiary)
 
-The kit reads beneficary details from the config file. Under the beneDetails section. For a list of required fields go [here](https://dev.cashfree.com/api-reference/payouts-api#create-beneficiary).
+The kit reads beneficary details from the app.js file. Under the object passed to the Beneficiary.add function. For a list of required fields go [here](https://dev.cashfree.com/api-reference/payouts-api#create-beneficiary).
 Sample Fields to add a beneficiary using bankAccount and ifsc:
   1. beneId: uniqueId of the created beneficiary.
   2. name: beneficiary name.
@@ -67,7 +66,7 @@ Required Fields are:
 
 ## Usage
 
-Once the config file is setup you can run the executable, to run the entire flow. Authorise, check and add beneficiary, 
+Once the app.js file is setup you can run the executable, to run the entire flow. Authorise, check and add beneficiary, 
 request for a payout transfer and get the transfer status.
 
 to run the script in the terminal run:
@@ -75,7 +74,7 @@ to run the script in the terminal run:
   node app.js
 ```
 
-You can change the necessary values in the config file as per your requirements and re run the script whenever needed.
+You can change the necessary values in the app.js file as per your requirements and re run the script whenever needed.
 
 ## Doubts
 
