@@ -13,8 +13,8 @@ const cfSdk = require('cashfree-sdk');
 
 const config = {
     Payouts:{
-    ClientID: "your_client_id",
-    ClientSecret: "your_client_secret",
+    ClientID: "clientId",
+    ClientSecret: "clientSecret",
     ENV: "TEST", 
     }
 };
@@ -29,45 +29,53 @@ const {Payouts} = cfSdk;
 const {Beneficiary, Transfers} = Payouts;
 
 //main execution function
+const bene = {
+    "beneId": "JOHN180127", 
+    "name": "john doe",
+    "email": "johndoe@cashfree.com", 
+    "phone": "9876543210",
+    "bankAccount": "00011020001773",  
+    "address1" : "ABC Street", 
+    "city": "Bangalore", 
+    "state":"Karnataka", 
+    "pincode": "560001"
+};
 (
 async () => {
     Payouts.Init(config.Payouts);
-    //Beneficiary Addition
-    try{
-        const response = await Beneficiary.Add({
-            "beneId": "JOHN180124", 
-            "name": "john doe",
-            "email": "johndoe@cashfree.com", 
-            "phone": "9876543210", 
-            "bankAccount": "00011020001772", 
-            "ifsc": "HDFC0000001", 
-            "address1" : "ABC Street", 
-            "city": "Bangalore", 
-            "state":"Karnataka", 
-            "pincode": "560001"
-        });
-        console.log("beneficiarry addition response");
-        console.log(response);
-        handleResponse(response);
-    }
-    catch(err){
-        console.log("err caught in beneficiarry addition");
-        console.log(err);
-        return;
-    }
+    let addBene = false;
     //Get Beneficiary details
     try{
         const response = await Beneficiary.GetDetails({
-            "beneId": "JOHN180124",
+            "beneId": bene.beneId,
         });
         console.log("get beneficiary details response");
         console.log(response);
-        handleResponse(response);
+        if(response.status === 'ERROR' && response.subCode === '404' && response.message === 'Beneficiary does not exist'){
+            addBene = true;
+        }
+        else{
+            handleResponse(response);
+        }
     }
     catch(err){
         console.log("err caught in getting beneficiary details");
         console.log(err);
         return;
+    }
+    if(addBene){
+        //Beneficiary Addition
+        try{
+            const response = await Beneficiary.Add(bene);
+            console.log("beneficiarry addition response");
+            console.log(response);
+            handleResponse(response);
+        }
+        catch(err){
+            console.log("err caught in beneficiarry addition");
+            console.log(err);
+            return;
+        }
     }
     //Request transfer
     try{
