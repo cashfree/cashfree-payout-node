@@ -13,8 +13,8 @@ const cfSdk = require('cashfree-sdk');
 
 const config = {
     Payouts:{
-    ClientID: "CF6130FKDN0O61WFQMYUM",
-    ClientSecret: "d1141e574b7e3b1caf032ee7af3e4dbea3a61681",
+    ClientID: "clientId",
+    ClientSecret: "clientSecret",
     ENV: "TEST", 
     }
 };
