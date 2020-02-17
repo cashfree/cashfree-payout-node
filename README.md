@@ -1,6 +1,6 @@
 # Cashfree Payout Integration Kit for Node
 
-Below is an integration flow on how to use Cashfree's payouts sdk.
+Below is an integration flow on how to use Cashfree's payouts SDK.
 Please go through the payout docs [here](https://dev.cashfree.com/payouts)
 <br/>
 This kit is linked to the standard transfer flow. Go [here](https://dev.cashfree.com/payouts/integrations/standard-transfer) to get a better understanding.
@@ -10,7 +10,7 @@ This kit is linked to the standard transfer flow. Go [here](https://dev.cashfree
 
 The following kit contains the following functionalities:
     <ol>
-    <li> init: initialize the payout sdk.
+    <li> init: initialize the payout SDK.
     <li> Beneficiary.Add: to get beneficiary details/check if a beneficiary exists.
     <li> Beneficiary.GetDetails: to create beneficiaries.
     <li> Transfers.RequestTransfer: to create a payout transfer.
@@ -30,9 +30,9 @@ follow the following build steps to compile the Integration kit:
 ### Pre Requisites:
 The following kit uses information stored in the app.js. Before running the code for the first time open the app.js file
 and add the relevant details:
-  1. ClientId: This is a unique Identifier that identifies the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
+  1. ClientId: This is a unique identifier that identifies the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
   2. ClientSecret: Corresponding secret key for the given ClientId that helps Cashfree identify the merchant. For more information please go [here](https://dev.cashfree.com/development/api/credentials).
-  3. Environment: Environment to be hit. The following values are accepted prod: for production, test: for test environment.
+  3. Environment: Environment to be hit. The following values are accepted prod: for production, test: for the test environment.
 
 ### IP Whitelisting:
 
@@ -48,15 +48,15 @@ Sample Fields to add a beneficiary using bankAccount and ifsc:
   2. name: beneficiary name.
   3. email: beneficiary email.
   4. phone: beneficiary phone.
-  5. bankAccount: beneficary's bank account.
+  5. bankAccount: beneficiary's bank account.
   6. ifsc: corresponding ifsc.
   7. address1: beneficiary address.
   8. city: beneficiary city.
   9. state: beneficiary state.
   10. pincode: beneficiary pincode.
   
-### transferDetails:
-To request a payout transfer certain information is needed. To get a better understanding on requesting a transfer go [here](https://dev.cashfree.com/api-reference/payouts-api#standard-transfer).
+### Transfer Details:
+To request a payout transfer certain information is needed. To get a better understanding of requesting a transfer go [here](https://dev.cashfree.com/api-reference/payouts-api#standard-transfer).
 
 Required Fields are:
   1. beneId: beneficiaryId to whom the transfer must be made to.
@@ -66,7 +66,7 @@ Required Fields are:
 
 ## Usage
 
-Once the app.js file is setup you can run the executable, to run the entire flow. Authorise, check and add beneficiary, 
+Once the app.js file is setup you can run the executable, to run the entire flow. Authorize, check and add beneficiary, 
 request for a payout transfer and get the transfer status.
 
 to run the script in the terminal run:
@@ -74,7 +74,7 @@ to run the script in the terminal run:
   node app.js
 ```
 
-You can change the necessary values in the app.js file as per your requirements and re run the script whenever needed.
+You can change the necessary values in the app.js file as per your requirements and re-run the script whenever needed.
 
 ## Doubts
 
