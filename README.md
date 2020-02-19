@@ -56,7 +56,7 @@ Sample Fields to add a beneficiary using bankAccount and ifsc:
   10. pincode: beneficiary pincode.
   
 ### Transfer Details:
-To request a payout transfer certain information is needed. To get a better understanding of requesting a transfer go [here](https://dev.cashfree.com/api-reference/payouts-api#standard-transfer).
+To request a payout transfer certain information is needed. To get a better understanding of requesting a transfer go [here](https://dev.cashfree.com/api-reference/payouts-api#transfers).
 
 Required fields are:
   1. beneId: beneficiaryId to whom the transfer must be made to.
