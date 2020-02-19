@@ -42,7 +42,7 @@ Your IP has to be whitelisted to hit Cashfree's server. For more information ple
 The following kit needs beneficiary details in order to check if the beneficiary exists and if it does not exist, 
 create a beneficiary for the payout transfer. For more information on Beneficiaries please go [here](https://dev.cashfree.com/api-reference/payouts-api#beneficiary)
 
-The kit reads beneficiary details from the app.js file. Under the object passed to the Beneficiary.add function. For a list of required fields go [here](https://dev.cashfree.com/api-reference/payouts-api#create-beneficiary).
+The kit reads beneficiary details from the app.js file. Under the object passed to the Beneficiary.add function. For a list of required fields go [here](https://dev.cashfree.com/api-reference/payouts-api#add-beneficiary).
 Sample Fields to add a beneficiary using bankAccount and ifsc:
   1. beneId: uniqueId of the created beneficiary.
   2. name: beneficiary name.
