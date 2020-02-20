@@ -4,9 +4,9 @@ Please go through the payout docs here: https://docs.cashfree.com/docs/payout/gu
 
 The following script contains the following functionalities :
     1.Beneficiary.add() -> to add a  beneficiary.
-    2.Beneficiary.GetDetails() -> to get the details of the added beneficiarry.
-    3.Transfer.RequestTransfer() -> to create a payout transfer.
-    4.Transfer.GetTransferStatus() -> to get payout transfer status.
+    2.Beneficiary.GetDetails() -> to get the details of the added beneficiary.
+    3.Transfers.RequestTransfer() -> to create a payout transfer.
+    4.Transfers.GetTransferStatus() -> to get payout transfer status.
 */
 
 const cfSdk = require('cashfree-sdk');
