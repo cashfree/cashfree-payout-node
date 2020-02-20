@@ -1,6 +1,6 @@
 /*
 Below is an integration flow on how to use Cashfree's payouts sdk. The sdk can be found at: https://github.com/cashfree/cashfree-sdk-nodejs
-Please go through the payout docs here: https://docs.cashfree.com/docs/payout/guide/
+Please go through the payout docs here: https://dev.cashfree.com/payouts
 
 The following script contains the following functionalities :
     1.Beneficiary.add() -> to add a  beneficiary.
