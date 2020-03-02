@@ -30,11 +30,12 @@ const {Beneficiary, Transfers} = Payouts;
 
 //main execution function
 const bene = {
-    "beneId": "JOHN180127", 
+    "beneId": "JOHN1801277890990877", 
     "name": "john doe",
     "email": "johndoe@cashfree.com", 
     "phone": "9876543210",
-    "bankAccount": "00011020001773",  
+    "bankAccount": "00011020001773",
+    "ifsc": "HDFC0000001",  
     "address1" : "ABC Street", 
     "city": "Bangalore", 
     "state":"Karnataka", 
