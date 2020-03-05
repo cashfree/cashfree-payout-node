@@ -13,8 +13,8 @@ const cfSdk = require('cashfree-sdk');
 
 const config = {
     Payouts:{
-    ClientID: "clientId",
-    ClientSecret: "clientSecret",
+    ClientID: "client_id",
+    ClientSecret: "client_secret",
     ENV: "TEST", 
     }
 };
@@ -34,13 +34,20 @@ const bene = {
     "name": "john doe",
     "email": "johndoe@cashfree.com", 
     "phone": "9876543210",
-    "bankAccount": "00011020001773",
+    "bankAccount": "00011020001772",
     "ifsc": "HDFC0000001",    
     "address1" : "ABC Street", 
     "city": "Bangalore", 
     "state":"Karnataka", 
     "pincode": "560001"
 };
+
+const transfer = {
+    beneId: bene.beneId,
+    transferId: "tranfer0012341239936",
+    amount: "1.00",
+};
+
 (
 async () => {
     Payouts.Init(config.Payouts);
@@ -80,11 +87,7 @@ async () => {
     }
     //Request transfer
     try{
-        const response = await Transfers.RequestTransfer({
-            "beneId": "JOHN180124",
-            "transferId": "tranfer001234",
-            "amount": "1.00",
-        });
+        const response = await Transfers.RequestTransfer(transfer);
         console.log("request transfer response");
         console.log(response);
         handleResponse(response);
@@ -97,7 +100,7 @@ async () => {
     //Get transfer status
     try{
         const response = await Transfers.GetTransferStatus({
-            "transferId": "tranfer001234",
+            "transferId": transfer.transferId,
         });
         console.log("get transfer status response");
         console.log(response);

@@ -1,7 +1,7 @@
 {
-  "name": "cashfree_lib_sample_node",
+  "name": "standardtransfer",
   "version": "1.0.0",
-  "description": "sample script aiming to demonstrate how to use cashfree's sdk",
+  "description": "cashfree integration sample to use node sdk for standard payout transfers",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,6 @@
   "author": "vrishab@cashfree.com",
   "license": "ISC",
   "dependencies": {
-    "cashfree-sdk": "git+https://github.com/cashfree/cashfree-sdk-nodejs.git"
+    "cashfree-sdk": "^0.1.1"
   }
 }
