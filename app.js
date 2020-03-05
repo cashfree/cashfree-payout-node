@@ -1,20 +1,20 @@
 /*
 Below is an integration flow on how to use Cashfree's payouts sdk. The sdk can be found at: https://github.com/cashfree/cashfree-sdk-nodejs
-Please go through the payout docs here: https://docs.cashfree.com/docs/payout/guide/
+Please go through the payout docs here: https://dev.cashfree.com/payouts
 
 The following script contains the following functionalities :
     1.Beneficiary.add() -> to add a  beneficiary.
-    2.Beneficiary.GetDetails() -> to get the details of the added beneficiarry.
-    3.Transfer.RequestTransfer() -> to create a payout transfer.
-    4.Transfer.GetTransferStatus() -> to get payout transfer status.
+    2.Beneficiary.GetDetails() -> to get the details of the added beneficiary.
+    3.Transfers.RequestTransfer() -> to create a payout transfer.
+    4.Transfers.GetTransferStatus() -> to get payout transfer status.
 */
 
 const cfSdk = require('cashfree-sdk');
 
 const config = {
     Payouts:{
-    ClientID: "clientId",
-    ClientSecret: "clientSecret",
+    ClientID: "client_id",
+    ClientSecret: "client_secret",
     ENV: "TEST", 
     }
 };
@@ -34,13 +34,20 @@ const bene = {
     "name": "john doe",
     "email": "johndoe@cashfree.com", 
     "phone": "9876543210",
-    "bankAccount": "00011020001773",
-    "ifsc": "HDFC0000001",  
+    "bankAccount": "00011020001772",
+    "ifsc": "HDFC0000001",    
     "address1" : "ABC Street", 
     "city": "Bangalore", 
     "state":"Karnataka", 
     "pincode": "560001"
 };
+
+const transfer = {
+    beneId: bene.beneId,
+    transferId: "tranfer0012341239936",
+    amount: "1.00",
+};
+
 (
 async () => {
     Payouts.Init(config.Payouts);
@@ -80,11 +87,7 @@ async () => {
     }
     //Request transfer
     try{
-        const response = await Transfers.RequestTransfer({
-            "beneId": "JOHN180124",
-            "transferId": "tranfer001234",
-            "amount": "1.00",
-        });
+        const response = await Transfers.RequestTransfer(transfer);
         console.log("request transfer response");
         console.log(response);
         handleResponse(response);
@@ -97,7 +100,7 @@ async () => {
     //Get transfer status
     try{
         const response = await Transfers.GetTransferStatus({
-            "transferId": "tranfer001234",
+            "transferId": transfer.transferId,
         });
         console.log("get transfer status response");
         console.log(response);
